@@ -1,0 +1,470 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:lt="http://www.liquid-technologies.com/json-schema-doc-gen" xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+      <title>
+         Documentation for JSON Schema File 
+         in Session Capture Schema
+      </title>
+      <!-- saved from url=(0014)about:internet -->
+      <link href="Content/bootstrap.min.css" rel="stylesheet"></link>
+      <link href="Content/JsonSchemaDocs.css" rel="stylesheet"></link><script src="Scripts/jquery-3.1.1.min.js" type="text/javascript"></script><script src="Scripts/bootstrap.min.js" type="text/javascript"></script><script src="Scripts/JsonSchemaDocs.js" type="text/javascript"></script><script type="text/javascript">
+         <!--
+                            $(function () {
+                                // ensure the page opens within its frameset
+                                ensureInFrame('SchemaFile', 'file-sessioncapture_schema_json');
+                            });
+                        --></script></head>
+   <body>
+      <div class="container">
+         <div class="heading-row">
+            <div class="row">
+               <div class="col-md-12">
+                  <h1>
+                     JSON Schema File 
+                  </h1>
+               </div>
+            </div>
+         </div>
+         <div class="property-row">
+            <div class="row is-flex">
+               <div class="col-md-2 property-heading" tooltip="Changes the URI resolution scope">
+                  <h3>ID</h3>
+               </div>
+               <div class="col-md-10">
+                  <div class="valign-center">https://opentech-ux.github.io/sessionCapture-format</div>
+               </div>
+            </div>
+         </div>
+         <div class="property-row">
+            <div class="row is-flex">
+               <div class="col-md-2 property-heading" tooltip="A short description of the instance described by this schema.">
+                  <h3>
+                     Title
+                     
+                  </h3>
+               </div>
+               <div class="col-md-10">
+                  <div class="valign-center">Session Capture</div>
+               </div>
+            </div>
+         </div>
+         <div class="property-row">
+            <div class="row is-flex">
+               <div class="col-md-2 property-heading" tooltip="A description explaining the purpose of the instance described by this schema.">
+                  <h3>Description</h3>
+               </div>
+               <div class="col-md-10">
+                  <div class="valign-center">A collection of LOMs and events captured during a certain time frame</div>
+               </div>
+            </div>
+         </div>
+         <div class="property-row">
+            <div class="row is-flex">
+               <div class="col-md-2 property-heading" tooltip="A graphical representation of the JSON schema item.">
+                  <h3>Diagram</h3>
+               </div>
+               <div class="col-md-10">
+                  <div class="valign-center"><map name="DiagramMap" id="DiagramMap">
+                        <area shape="rect" coords="299,909,550,931" href="def-actionevent.html" alt="Drilldown into /$defs/ActionEvent"></area>
+                        <area shape="rect" coords="295,880,554,936" href="def-actionevent.html" alt="Drilldown into /$defs/ActionEvent"></area>
+                        <area shape="rect" coords="299,836,546,867" href="def-explorationevent.html" alt="Drilldown into /$defs/ExplorationEvent"></area>
+                        <area shape="rect" coords="295,807,550,872" href="def-explorationevent.html" alt="Drilldown into /$defs/ExplorationEvent"></area>
+                        <area shape="rect" coords="299,773,552,795" href="def-lom.html" alt="Drilldown into /$defs/LOM"></area>
+                        <area shape="rect" coords="295,744,556,800" href="def-lom.html" alt="Drilldown into /$defs/LOM"></area>
+                        <area shape="rect" coords="299,710,527,732" href="def-zone.html" alt="Drilldown into /$defs/Zone"></area>
+                        <area shape="rect" coords="295,681,531,737" href="def-zone.html" alt="Drilldown into /$defs/Zone"></area>
+                        <area shape="rect" coords="299,647,537,669" href="def-bounds.html" alt="Drilldown into /$defs/Bounds"></area>
+                        <area shape="rect" coords="295,618,541,674" href="def-bounds.html" alt="Drilldown into /$defs/Bounds"></area>
+                        <area shape="rect" coords="299,584,548,606" href="def-dimension.html" alt="Drilldown into /$defs/Dimension"></area>
+                        <area shape="rect" coords="299,571,548,584" href="def-dimension.html" alt="Drilldown into /$defs/Dimension"></area>
+                        <area shape="rect" coords="295,542,552,611" href="def-dimension.html" alt="Drilldown into /$defs/Dimension"></area>
+                        <area shape="rect" coords="299,499,550,530" href="def-timestamp.html" alt="Drilldown into /$defs/TimeStamp"></area>
+                        <area shape="rect" coords="295,470,554,535" href="def-timestamp.html" alt="Drilldown into /$defs/TimeStamp"></area>
+                        <area shape="rect" coords="299,367,544,389" href="property-ae.html" alt="Drilldown into /properties/ae"></area>
+                        <area shape="rect" coords="295,338,548,394" href="property-ae.html" alt="Drilldown into /properties/ae"></area>
+                        <area shape="rect" coords="299,304,538,326" href="property-ee.html" alt="Drilldown into /properties/ee"></area>
+                        <area shape="rect" coords="295,275,542,331" href="property-ee.html" alt="Drilldown into /properties/ee"></area>
+                        <area shape="rect" coords="299,241,531,263" href="property-loms.html" alt="Drilldown into /properties/loms"></area>
+                        <area shape="rect" coords="295,212,535,268" href="property-loms.html" alt="Drilldown into /properties/loms"></area>
+                        <area shape="rect" coords="299,61,542,74" href="def-timestamp.html" alt="Drilldown into /$defs/TimeStamp"></area>
+                        <area shape="rect" coords="295,32,546,79" href="def-timestamp.html" alt="Drilldown into /$defs/TimeStamp"></area></map><img src="images/file-sessioncapture_schema_json.png" border="0" alt="JSON Schema Diagram of /" usemap="#DiagramMap"></img></div>
+               </div>
+            </div>
+         </div>
+         <div class="property-row">
+            <div class="row">
+               <div class="col-md-2 property-heading" tooltip="Describes what the JSON instance value can contain.">
+                  <h3>Value</h3>
+               </div>
+               <div class="col-md-10">
+                  <div class="row value-type-row is-flex">
+                     <div class="col-md-2">
+                        <h4>Object</h4>
+                     </div>
+                     <div class="col-md-10">
+                        <div class="valign-center">
+                           <div class="row">
+                              <div class="col-md-12">
+                                 <h4>Properties</h4>
+                              </div>
+                           </div>
+                           <div class="row">
+                              <div class="col-md-12">
+                                 <table class="table table-bordered">
+                                    <thead>
+                                       <tr>
+                                          <th class="col-md-3" tooltip="The name of the property, as it appears in the JSON instance document">Property Name</th>
+                                          <th class="col-md-2" tooltip="The data types that this property can contain within the JSON instance document">Type</th>
+                                          <th class="col-md-7" tooltip="A description of the property including validation rules">Description</th>
+                                       </tr>
+                                    </thead>
+                                    <tr>
+                                       <td tooltip="Example { ts : ... }">ts</td>
+                                       <td>number</td>
+                                       <td><a href="def-timestamp.html" title="/$defs/TimeStamp">TimeStamp
+                                             (sessionCapture.schema.json)
+                                             </a></td>
+                                    </tr>
+                                    <tr>
+                                       <td tooltip="Example { sid : ... }">sid</td>
+                                       <td>string</td>
+                                       <td>
+                                          A String value
+                                          
+                                          <div>
+                                             Description : Unique id identifying the current session
+                                          </div>
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <td tooltip="Example { uid : ... }">uid</td>
+                                       <td>string</td>
+                                       <td>
+                                          A String value
+                                          
+                                          <div>
+                                             Description : Unique id identifying anonymously the current user
+                                          </div>
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <td tooltip="Example { loms : ... }">loms</td>
+                                       <td>array</td>
+                                       <td><a href="property-loms.html" title="/properties/loms">loms
+                                             (sessionCapture.schema.json)
+                                             </a></td>
+                                    </tr>
+                                    <tr>
+                                       <td tooltip="Example { ee : ... }">ee</td>
+                                       <td>array</td>
+                                       <td><a href="property-ee.html" title="/properties/ee">ee
+                                             (sessionCapture.schema.json)
+                                             </a></td>
+                                    </tr>
+                                    <tr>
+                                       <td tooltip="Example { ae : ... }">ae</td>
+                                       <td>array</td>
+                                       <td><a href="property-ae.html" title="/properties/ae">ae
+                                             (sessionCapture.schema.json)
+                                             </a></td>
+                                    </tr>
+                                    <thead>
+                                       <tr>
+                                          <th class="col-md-3" tooltip="Any property not matched by the properties described above, must comply with the rules below.">Additional Properties</th>
+                                          <th class="col-md-2" tooltip="The data types that this property can contain within the JSON instance document">Type</th>
+                                          <th class="col-md-7" tooltip="A description of the property including validation rules">Description</th>
+                                       </tr>
+                                    </thead>
+                                    <tr>
+                                       <td tooltip="The property can have any name">
+                                          Any Property
+                                          
+                                       </td>
+                                       <td tooltip="The property can have any type">
+                                          Any
+                                          
+                                       </td>
+                                       <td>
+                                          All values are valid, no restrictions.
+                                          
+                                       </td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="property-row">
+            <div class="row">
+               <div class="col-md-2 property-heading" tooltip="Reusable schema definitions that can be referenced in other parts of the document.">
+                  <h3>Definitions</h3>
+               </div>
+               <div class="col-md-6">
+                  <table class="table">
+                     <thead>
+                        <tr>
+                           <th tooltip="The name of the schema definition">Name</th>
+                           <th tooltip="The types allowed within the definition">Type</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td><strong tooltip="Reference using '#/definitions/TimeStamp'"><a href="def-timestamp.html" title="/$defs/TimeStamp">TimeStamp
+                                    (sessionCapture.schema.json)
+                                    </a></strong></td>
+                           <td>number</td>
+                        </tr>
+                        <tr>
+                           <td><strong tooltip="Reference using '#/definitions/Dimension'"><a href="def-dimension.html" title="/$defs/Dimension">Dimension
+                                    (sessionCapture.schema.json)
+                                    </a></strong></td>
+                           <td>integer</td>
+                        </tr>
+                        <tr>
+                           <td><strong tooltip="Reference using '#/definitions/Bounds'"><a href="def-bounds.html" title="/$defs/Bounds">Bounds
+                                    (sessionCapture.schema.json)
+                                    </a></strong></td>
+                           <td>array</td>
+                        </tr>
+                        <tr>
+                           <td><strong tooltip="Reference using '#/definitions/Zone'"><a href="def-zone.html" title="/$defs/Zone">Zone
+                                    (sessionCapture.schema.json)
+                                    </a></strong></td>
+                           <td>object</td>
+                        </tr>
+                        <tr>
+                           <td><strong tooltip="Reference using '#/definitions/LOM'"><a href="def-lom.html" title="/$defs/LOM">LOM
+                                    (sessionCapture.schema.json)
+                                    </a></strong></td>
+                           <td>object</td>
+                        </tr>
+                        <tr>
+                           <td><strong tooltip="Reference using '#/definitions/ExplorationEvent'"><a href="def-explorationevent.html" title="/$defs/ExplorationEvent">ExplorationEvent
+                                    (sessionCapture.schema.json)
+                                    </a></strong></td>
+                           <td>string</td>
+                        </tr>
+                        <tr>
+                           <td><strong tooltip="Reference using '#/definitions/ActionEvent'"><a href="def-actionevent.html" title="/$defs/ActionEvent">ActionEvent
+                                    (sessionCapture.schema.json)
+                                    </a></strong></td>
+                           <td>string</td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+            </div>
+         </div>
+         <div class="property-row">
+            <div class="row is-flex">
+               <div class="col-md-2 property-heading" tooltip="The source code for this JSON Schema item.">
+                  <h3>Source</h3>
+               </div>
+               <div class="col-md-10">
+                  <div class="valign-center"><pre class="json">{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$id": "https://opentech-ux.github.io/sessionCapture-format",
+    "type": "object",
+    "title": "Session Capture",
+    "description": "A collection of LOMs and events captured during a certain time frame",
+    "additionalProperties": true,
+    "properties": {
+        "ts": {
+            "$ref": "#/$defs/TimeStamp",
+            "description": "Start time of this session chunk"
+        },
+        "sid": {
+            "type": "string",
+            "description": "Unique id identifying the current session"
+        },
+        "uid": {
+            "type": "string",
+            "description": "Unique id identifying anonymously the current user"
+        },
+        "loms": {
+            "type": "array",
+            "description": "List of LOMs captured in this session chunk",
+            "items": {
+                "$ref": "#/$defs/LOM"
+            }
+        },
+        "ee": {
+            "type": "array",
+            "description": "List of exploration events captured in this session chunk",
+            "items": {
+                "$ref": "#/$defs/ExplorationEvent"
+            }
+        },
+        "ae": {
+            "type": "array",
+            "description": "List of action events captured in this session chunk",
+            "items": {
+                "$ref": "#/$defs/ActionEvent"
+            }
+        }
+    },
+    "required": [
+        "ts",
+        "sid"
+    ],
+    "$defs": {
+        "TimeStamp": {
+            "type": "number",
+            "description": "An instant in time mesured as the number of ellapsed milliseconds since 1970-01-01 00:00:00 UTC"
+        },
+        "Dimension": {
+            "type": "integer",
+            "description": "Size of a graphical element along an axis",
+            "minimum": 0
+        },
+        "Bounds": {
+            "type": "array",
+            "description": "Coordinates of an axis-aligned rectangle",
+            "additionalItems": false,
+            "items": [
+                {
+                    "type": "integer",
+                    "description": "X coordinate of the upper-left corner of the bounds in pixels"
+                },
+                {
+                    "type": "integer",
+                    "description": "Y coordinate of the upper-left corner of the bounds in pixels"
+                },
+                {
+                    "$ref": "#/$defs/Dimension",
+                    "description": "Width of the bounds in pixels"
+                },
+                {
+                    "$ref": "#/$defs/Dimension",
+                    "description": "Height of the bounds in pixels"
+                }
+            ]
+        },
+        "Zone": {
+            "type": "object",
+            "description": "Representation of a zone on screen",
+            "additionalItems": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique ID of this zone in its LOM"
+                },
+                "b": {
+                    "$ref": "#/$defs/Bounds",
+                    "description": "Coordinates of the area occupied by this zone relative to the parent zone"
+                },
+                "c": {
+                    "type": "array",
+                    "description": "List of children zones of this zone",
+                    "minItems": 1,
+                    "items": {
+                        "$ref": "#/$defs/Zone"
+                    }
+                },
+                "s": {
+                    "type": "object",
+                    "description": "Styling information for zone rendering",
+                    "additionalProperties": false,
+                    "properties": {
+                        "bg": {
+                            "type": "string",
+                            "description": "Background styling in CSS format"
+                        },
+                        "b": {
+                            "type": "string",
+                            "description": "Border styling in CSS format"
+                        }
+                    }
+                }
+            },
+            "required": [
+                "bounds"
+            ]
+        },
+        "LOM": {
+            "type": "object",
+            "description": "Specification of the wireframe of a single Web page",
+            "additionalProperties": true,
+            "properties": {
+                "ts": {
+                    "$ref": "#/$defs/TimeStamp",
+                    "description": "Instant of this LOM capture relative to the session chunk timeStamp"
+                },
+                "w": {
+                    "$ref": "#/$defs/Dimension",
+                    "description": "Global page width"
+                },
+                "h": {
+                    "$ref": "#/$defs/Dimension",
+                    "description": "Global page height"
+                },
+                "t": {
+                    "type": "string",
+                    "description": "Page title to help identify the LOM"
+                },
+                "u": {
+                    "type": "string",
+                    "description": "Page URL to help identify the LOM"
+                },
+                "r": {
+                    "$ref": "#/$defs/Zone",
+                    "description": "Root zone corresponding to the  HTML body element"
+                }
+            },
+            "required": [
+                "ts",
+                "w",
+                "h",
+                "r"
+            ]
+        },
+        "ExplorationEvent": {
+            "type": "string",
+            "description": "Information about an exploration event (mouse move, scrolling, keyboard navigation, ...)"
+        },
+        "ActionEvent": {
+            "type": "string",
+            "description": "Information about an action event (mouse click, keystroke, drag &amp; drop, ...)"
+        }
+    }
+}</pre><div><i>https://opentech-ux.github.io/sessionCapture-format/sessionCapture.schema.json (1:2)
+                           </i></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="property-row">
+            <div class="row is-flex">
+               <div class="col-md-2 property-heading" tooltip="All the entities that reference this schema">
+                  <h3>References</h3>
+               </div>
+               <div class="col-md-10">
+                  <div class="valign-center">
+                     <ul>
+                        <li><a href="schema-4.html" title="/additionalProperties">/additionalProperties
+                              (sessionCapture.schema.json)
+                              </a></li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="property-row">
+            <div class="row">
+               <div class="col-md-12">
+                  Documentation for Session Capture Schema
+                            <br/>
+                        
+                  Generated using
+                  <a href="http://www.liquid-technologies.com/" target="_parent">Liquid Studio 2021 - Developer Bundle (Trial) 19.0.14.11049</a></div>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>
