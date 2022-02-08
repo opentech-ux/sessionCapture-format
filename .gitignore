@@ -1,0 +1,10 @@
+# Ignore hidden files
+.*
+
+# Ignore iml files
+*.iml
+
+!.gitignore
+!.gitattributes
+!.gitkeep
+!.gitlab-ci.yml
