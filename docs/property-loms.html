@@ -45,15 +45,25 @@
                </div>
                <div class="col-md-10">
                   <div class="valign-center"><map name="DiagramMap" id="DiagramMap">
-                        <area shape="rect" coords="290,189,539,211" href="def-lom.html" alt="Drilldown into /$defs/LOM"></area>
-                        <area shape="rect" coords="563,321,852,343" href="def-lom.html" alt="Drilldown into /$defs/LOM"></area>
-                        <area shape="rect" coords="599,271,822,296" href="def-lom.html" alt="Drilldown into /$defs/LOM"></area>
-                        <area shape="rect" coords="599,239,788,264" href="def-zone.html" alt="Drilldown into /$defs/Zone"></area>
-                        <area shape="rect" coords="599,143,819,168" href="def-dimension.html" alt="Drilldown into /$defs/Dimension"></area>
-                        <area shape="rect" coords="599,111,819,136" href="def-dimension.html" alt="Drilldown into /$defs/Dimension"></area>
-                        <area shape="rect" coords="599,79,822,104" href="def-timestamp.html" alt="Drilldown into /$defs/TimeStamp"></area>
-                        <area shape="rect" coords="579,54,835,308" href="def-lom.html" alt="Drilldown into /$defs/LOM"></area>
-                        <area shape="rect" coords="559,28,856,348" href="def-lom.html" alt="Drilldown into /$defs/LOM"></area></map><img src="images/property-loms.png" border="0" alt="JSON Schema Diagram of /properties/loms" usemap="#DiagramMap"></img></div>
+                        <area shape="rect" coords="493,558,735,580" href="def-lomref.html" alt="Drilldown into /$defs/LomRef"></area>
+                        <area shape="rect" coords="795,545,1018,570" href="def-timestamp.html" alt="Drilldown into /$defs/TimeStamp"></area>
+                        <area shape="rect" coords="775,520,1031,612" href="def-lomref.html" alt="Drilldown into /$defs/LomRef"></area>
+                        <area shape="rect" coords="755,494,1052,621" href="def-lomref.html" alt="Drilldown into /$defs/LomRef"></area>
+                        <area shape="rect" coords="489,529,739,585" href="def-lomref.html" alt="Drilldown into /$defs/LomRef"></area>
+                        <area shape="rect" coords="493,327,742,349" href="def-lom.html" alt="Drilldown into /$defs/Lom"></area>
+                        <area shape="rect" coords="802,441,1025,466" href="def-lom.html" alt="Drilldown into /$defs/Lom"></area>
+                        <area shape="rect" coords="802,409,991,434" href="def-zone.html" alt="Drilldown into /$defs/Zone"></area>
+                        <area shape="rect" coords="802,313,1022,338" href="def-dimension.html" alt="Drilldown into /$defs/Dimension"></area>
+                        <area shape="rect" coords="802,281,1022,306" href="def-dimension.html" alt="Drilldown into /$defs/Dimension"></area>
+                        <area shape="rect" coords="802,249,1025,274" href="def-timestamp.html" alt="Drilldown into /$defs/TimeStamp"></area>
+                        <area shape="rect" coords="782,192,1038,478" href="def-lom.html" alt="Drilldown into /$defs/Lom"></area>
+                        <area shape="rect" coords="762,166,1059,487" href="def-lom.html" alt="Drilldown into /$defs/Lom"></area>
+                        <area shape="rect" coords="489,298,746,354" href="def-lom.html" alt="Drilldown into /$defs/Lom"></area>
+                        <area shape="rect" coords="444,311,473,572" href="schema-6.html" alt="Drilldown into /properties/loms/items[0]"></area>
+                        <area shape="rect" coords="464,122,687,147" href="schema-6.html" alt="Drilldown into /properties/loms/items[0]"></area>
+                        <area shape="rect" coords="444,97,697,159" href="schema-6.html" alt="Drilldown into /properties/loms/items[0]"></area>
+                        <area shape="rect" coords="464,53,606,78" href="schema-6.html" alt="Drilldown into /properties/loms/items[0]"></area>
+                        <area shape="rect" coords="444,28,616,90" href="schema-6.html" alt="Drilldown into /properties/loms/items[0]"></area></map><img src="images/property-loms.png" border="0" alt="JSON Schema Diagram of /properties/loms" usemap="#DiagramMap"></img></div>
                </div>
             </div>
          </div>
@@ -83,8 +93,8 @@
                                        <td tooltip="Example {  : ... }">1-n
                                           
                                        </td>
-                                       <td>object</td>
-                                       <td><a href="def-lom.html" title="/$defs/LOM">LOM
+                                       <td>any</td>
+                                       <td><a href="schema-6.html" title="/properties/loms/items[0]">/properties/loms/items[0]
                                              (sessionCapture.schema.json)
                                              </a></td>
                                     </tr>
@@ -107,7 +117,14 @@
     "type": "array",
     "description": "List of LOMs captured in this session chunk",
     "items": {
-        "$ref": "#/$defs/LOM"
+        "anyOf": [
+            {
+                "$ref": "#/$defs/Lom"
+            },
+            {
+                "$ref": "#/$defs/LomRef"
+            }
+        ]
     }
 }</pre><div><i>https://opentech-ux.github.io/sessionCapture-format/sessionCapture.schema.json (20:10)
                            </i></div>
@@ -124,6 +141,9 @@
                   <div class="valign-center">
                      <ul>
                         <li><a href="file-sessioncapture_schema_json.html" title="/">/
+                              (sessionCapture.schema.json)
+                              </a></li>
+                        <li><a href="schema-6.html" title="/properties/loms/items[0]">/properties/loms/items[0]
                               (sessionCapture.schema.json)
                               </a></li>
                      </ul>

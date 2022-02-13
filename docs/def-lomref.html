@@ -4,7 +4,7 @@
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
       <title>
-         Documentation for JSON Schema Property c
+         Documentation for JSON Schema Definition LomRef
          in Session Capture Schema
       </title>
       <!-- saved from url=(0014)about:internet -->
@@ -13,7 +13,7 @@
          <!--
                             $(function () {
                                 // ensure the page opens within its frameset
-                                ensureInFrame('Property', 'property-c');
+                                ensureInFrame('Definition', 'def-lomref');
                             });
                         --></script></head>
    <body>
@@ -22,7 +22,7 @@
             <div class="row">
                <div class="col-md-12">
                   <h1>
-                     JSON Schema Property 'c'
+                     JSON Schema Definition 'LomRef'
                      
                   </h1>
                </div>
@@ -34,7 +34,7 @@
                   <h3>Description</h3>
                </div>
                <div class="col-md-10">
-                  <div class="valign-center">List of children zones of this zone</div>
+                  <div class="valign-center">Reference to a LOM previously captured</div>
                </div>
             </div>
          </div>
@@ -45,12 +45,8 @@
                </div>
                <div class="col-md-10">
                   <div class="valign-center"><map name="DiagramMap" id="DiagramMap">
-                        <area shape="rect" coords="309,135,540,157" href="def-zone.html" alt="Drilldown into /$defs/Zone"></area>
-                        <area shape="rect" coords="564,223,834,236" href="def-zone.html" alt="Drilldown into /$defs/Zone"></area>
-                        <area shape="rect" coords="600,175,766,200" href="property-s.html" alt="Drilldown into /$defs/Zone/properties/s"></area>
-                        <area shape="rect" coords="600,111,804,136" href="def-bounds.html" alt="Drilldown into /$defs/Bounds"></area>
-                        <area shape="rect" coords="580,54,817,210" href="def-zone.html" alt="Drilldown into /$defs/Zone"></area>
-                        <area shape="rect" coords="560,28,838,241" href="def-zone.html" alt="Drilldown into /$defs/Zone"></area></map><img src="images/property-c.png" border="0" alt="JSON Schema Diagram of /$defs/Zone/properties/c" usemap="#DiagramMap"></img></div>
+                        <area shape="rect" coords="297,56,528,78" href="def-timestamp.html" alt="Drilldown into /$defs/TimeStamp"></area>
+                        <area shape="rect" coords="293,27,532,83" href="def-timestamp.html" alt="Drilldown into /$defs/TimeStamp"></area></map><img src="images/def-lomref.png" border="0" alt="JSON Schema Diagram of /$defs/LomRef" usemap="#DiagramMap"></img></div>
                </div>
             </div>
          </div>
@@ -62,28 +58,42 @@
                <div class="col-md-10">
                   <div class="row value-type-row is-flex">
                      <div class="col-md-2">
-                        <h4>Array</h4>
+                        <h4>Object</h4>
                      </div>
                      <div class="col-md-10">
                         <div class="valign-center">
                            <div class="row">
                               <div class="col-md-12">
+                                 <h4>Properties</h4>
+                              </div>
+                           </div>
+                           <div class="row">
+                              <div class="col-md-12">
                                  <table class="table table-bordered">
                                     <thead>
                                        <tr>
-                                          <th class="col-md-3" tooltip="The index of value in the array (1 based)">Array Index</th>
+                                          <th class="col-md-3" tooltip="The name of the property, as it appears in the JSON instance document">Property Name</th>
                                           <th class="col-md-2" tooltip="The data types that this property can contain within the JSON instance document">Type</th>
                                           <th class="col-md-7" tooltip="A description of the property including validation rules">Description</th>
                                        </tr>
                                     </thead>
                                     <tr>
-                                       <td tooltip="Example {  : ... }">1-n
-                                          
-                                       </td>
-                                       <td>object</td>
-                                       <td><a href="def-zone.html" title="/$defs/Zone">Zone
+                                       <td tooltip="Example { ts : ... }">ts</td>
+                                       <td>number</td>
+                                       <td><a href="def-timestamp.html" title="/$defs/TimeStamp">TimeStamp
                                              (sessionCapture.schema.json)
                                              </a></td>
+                                    </tr>
+                                    <tr>
+                                       <td tooltip="Example { ref : ... }">ref</td>
+                                       <td>string</td>
+                                       <td>
+                                          A String value
+                                          
+                                          <div>
+                                             Description : ID of the referenced LOM
+                                          </div>
+                                       </td>
                                     </tr>
                                  </table>
                               </div>
@@ -100,13 +110,25 @@
                   <h3>Source</h3>
                </div>
                <div class="col-md-10">
-                  <div class="valign-center"><pre class="json">"c": {
-    "type": "array",
-    "description": "List of children zones of this zone",
-    "items": {
-        "$ref": "#/$defs/Zone"
-    }
-}</pre><div><i>https://opentech-ux.github.io/sessionCapture-format/sessionCapture.schema.json (100:18)
+                  <div class="valign-center"><pre class="json">"LomRef": {
+    "type": "object",
+    "description": "Reference to a LOM previously captured",
+    "additionalProperties": false,
+    "properties": {
+        "ts": {
+            "$ref": "#/$defs/TimeStamp",
+            "description": "Instant of this LOM capture relative to the session chunk timeStamp"
+        },
+        "ref": {
+            "type": "string",
+            "description": "ID of the referenced LOM"
+        }
+    },
+    "required": [
+        "ts",
+        "ref"
+    ]
+}</pre><div><i>https://opentech-ux.github.io/sessionCapture-format/sessionCapture.schema.json (168:10)
                            </i></div>
                   </div>
                </div>
@@ -120,10 +142,16 @@
                <div class="col-md-10">
                   <div class="valign-center">
                      <ul>
-                        <li><a href="def-zone.html" title="/$defs/Zone">/$defs/Zone
+                        <li><a href="file-sessioncapture_schema_json.html" title="/">/
                               (sessionCapture.schema.json)
                               </a></li>
-                        <li><a href="schema-3.html" title="/$defs/Zone/additionalProperties">/$defs/Zone/additionalProperties
+                        <li><a href="schema-2.html" title="/$defs/LomRef/additionalProperties">/$defs/LomRef/additionalProperties
+                              (sessionCapture.schema.json)
+                              </a></li>
+                        <li><a href="property-loms.html" title="/properties/loms">/properties/loms
+                              (sessionCapture.schema.json)
+                              </a></li>
+                        <li><a href="schema-6.html" title="/properties/loms/items[0]">/properties/loms/items[0]
                               (sessionCapture.schema.json)
                               </a></li>
                      </ul>

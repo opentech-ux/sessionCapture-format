@@ -1,8 +1,8 @@
 ﻿{
     "$schema": "https://json-schema.org/draft/2019-09/schema",
     "$id": "https://opentech-ux.github.io/sessionCapture-format",
-    "title": "Session Capture",
     "type": "object",
+    "title": "Session Capture",
     "description": "A collection of LOMs and events captured during a certain time frame",
     "additionalProperties": true,
     "properties": {
@@ -22,7 +22,14 @@
             "type": "array",
             "description": "List of LOMs captured in this session chunk",
             "items": {
-                "$ref": "#/$defs/LOM"
+                "anyOf": [
+                    {
+                        "$ref": "#/$defs/Lom"
+                    },
+                    {
+                        "$ref": "#/$defs/LomRef"
+                    }
+                ]                
             }
         },
         "ee": {
@@ -58,6 +65,7 @@
             "type": "array",
             "description": "Coordinates of an axis-aligned rectangle",
             "additionalItems": false,
+            "minItems": 4,
             "items": [
                 {
                     "type": "integer",
@@ -80,7 +88,7 @@
         "Zone": {
             "type": "object",
             "description": "Representation of a zone on screen",
-            "additionalItems": false,
+            "additionalProperties": false,
             "properties": {
                 "id": {
                     "type": "string",
@@ -93,7 +101,6 @@
                 "c": {
                     "type": "array",
                     "description": "List of children zones of this zone",
-                    "minItems": 1,
                     "items": {
                         "$ref": "#/$defs/Zone"
                     }
@@ -115,14 +122,18 @@
                 }
             },
             "required": [
-                "bounds"
+                "b"
             ]
         },
-        "LOM": {
+        "Lom": {
             "type": "object",
             "description": "Specification of the wireframe of a single Web page",
             "additionalProperties": true,
             "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique ID for this LOM in the context of current session"
+                },
                 "ts": {
                     "$ref": "#/$defs/TimeStamp",
                     "description": "Instant of this LOM capture relative to the session chunk timeStamp"
@@ -153,6 +164,25 @@
                 "w",
                 "h",
                 "r"
+            ]
+        },
+        "LomRef": {
+            "type": "object",
+            "description": "Reference to a LOM previously captured",
+            "additionalProperties": false,
+            "properties": {
+                 "ts": {
+                    "$ref": "#/$defs/TimeStamp",
+                    "description": "Instant of this LOM capture relative to the session chunk timeStamp"
+                },
+                "ref": {
+                    "type": "string",
+                    "description": "ID of the referenced LOM"
+                }
+            },
+            "required": [
+                "ts",
+                "ref"
             ]
         },
         "ExplorationEvent": {

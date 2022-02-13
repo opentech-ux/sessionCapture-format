@@ -4,7 +4,7 @@
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
       <title>
-         Documentation for JSON Schema Definition LOM
+         Documentation for JSON Schema Definition Lom
          in Session Capture Schema
       </title>
       <!-- saved from url=(0014)about:internet -->
@@ -22,7 +22,7 @@
             <div class="row">
                <div class="col-md-12">
                   <h1>
-                     JSON Schema Definition 'LOM'
+                     JSON Schema Definition 'Lom'
                      
                   </h1>
                </div>
@@ -45,16 +45,16 @@
                </div>
                <div class="col-md-10">
                   <div class="valign-center"><map name="DiagramMap" id="DiagramMap">
-                        <area shape="rect" coords="311,361,554,383" href="def-zone.html" alt="Drilldown into /$defs/Zone"></area>
-                        <area shape="rect" coords="307,332,558,388" href="def-zone.html" alt="Drilldown into /$defs/Zone"></area>
-                        <area shape="rect" coords="311,199,523,212" href="def-dimension.html" alt="Drilldown into /$defs/Dimension"></area>
-                        <area shape="rect" coords="311,186,523,199" href="def-dimension.html" alt="Drilldown into /$defs/Dimension"></area>
-                        <area shape="rect" coords="307,157,527,217" href="def-dimension.html" alt="Drilldown into /$defs/Dimension"></area>
-                        <area shape="rect" coords="311,132,523,145" href="def-dimension.html" alt="Drilldown into /$defs/Dimension"></area>
-                        <area shape="rect" coords="311,119,523,132" href="def-dimension.html" alt="Drilldown into /$defs/Dimension"></area>
-                        <area shape="rect" coords="307,90,527,150" href="def-dimension.html" alt="Drilldown into /$defs/Dimension"></area>
-                        <area shape="rect" coords="311,56,542,78" href="def-timestamp.html" alt="Drilldown into /$defs/TimeStamp"></area>
-                        <area shape="rect" coords="307,27,546,83" href="def-timestamp.html" alt="Drilldown into /$defs/TimeStamp"></area></map><img src="images/def-lom.png" border="0" alt="JSON Schema Diagram of /$defs/LOM" usemap="#DiagramMap"></img></div>
+                        <area shape="rect" coords="311,424,554,446" href="def-zone.html" alt="Drilldown into /$defs/Zone"></area>
+                        <area shape="rect" coords="307,395,558,451" href="def-zone.html" alt="Drilldown into /$defs/Zone"></area>
+                        <area shape="rect" coords="311,262,523,275" href="def-dimension.html" alt="Drilldown into /$defs/Dimension"></area>
+                        <area shape="rect" coords="311,249,523,262" href="def-dimension.html" alt="Drilldown into /$defs/Dimension"></area>
+                        <area shape="rect" coords="307,220,527,280" href="def-dimension.html" alt="Drilldown into /$defs/Dimension"></area>
+                        <area shape="rect" coords="311,195,523,208" href="def-dimension.html" alt="Drilldown into /$defs/Dimension"></area>
+                        <area shape="rect" coords="311,182,523,195" href="def-dimension.html" alt="Drilldown into /$defs/Dimension"></area>
+                        <area shape="rect" coords="307,153,527,213" href="def-dimension.html" alt="Drilldown into /$defs/Dimension"></area>
+                        <area shape="rect" coords="311,119,542,141" href="def-timestamp.html" alt="Drilldown into /$defs/TimeStamp"></area>
+                        <area shape="rect" coords="307,90,546,146" href="def-timestamp.html" alt="Drilldown into /$defs/TimeStamp"></area></map><img src="images/def-lom.png" border="0" alt="JSON Schema Diagram of /$defs/Lom" usemap="#DiagramMap"></img></div>
                </div>
             </div>
          </div>
@@ -85,6 +85,17 @@
                                           <th class="col-md-7" tooltip="A description of the property including validation rules">Description</th>
                                        </tr>
                                     </thead>
+                                    <tr>
+                                       <td tooltip="Example { id : ... }">id</td>
+                                       <td>string</td>
+                                       <td>
+                                          A String value
+                                          
+                                          <div>
+                                             Description : Unique ID for this LOM in the context of current session
+                                          </div>
+                                       </td>
+                                    </tr>
                                     <tr>
                                        <td tooltip="Example { ts : ... }">ts</td>
                                        <td>number</td>
@@ -171,11 +182,15 @@
                   <h3>Source</h3>
                </div>
                <div class="col-md-10">
-                  <div class="valign-center"><pre class="json">"LOM": {
+                  <div class="valign-center"><pre class="json">"Lom": {
     "type": "object",
     "description": "Specification of the wireframe of a single Web page",
     "additionalProperties": true,
     "properties": {
+        "id": {
+            "type": "string",
+            "description": "Unique ID for this LOM in the context of current session"
+        },
         "ts": {
             "$ref": "#/$defs/TimeStamp",
             "description": "Instant of this LOM capture relative to the session chunk timeStamp"
@@ -207,7 +222,7 @@
         "h",
         "r"
     ]
-}</pre><div><i>https://opentech-ux.github.io/sessionCapture-format/sessionCapture.schema.json (120:10)
+}</pre><div><i>https://opentech-ux.github.io/sessionCapture-format/sessionCapture.schema.json (127:10)
                            </i></div>
                   </div>
                </div>
@@ -224,10 +239,13 @@
                         <li><a href="file-sessioncapture_schema_json.html" title="/">/
                               (sessionCapture.schema.json)
                               </a></li>
-                        <li><a href="schema-1.html" title="/$defs/LOM/additionalProperties">/$defs/LOM/additionalProperties
+                        <li><a href="schema-1.html" title="/$defs/Lom/additionalProperties">/$defs/Lom/additionalProperties
                               (sessionCapture.schema.json)
                               </a></li>
                         <li><a href="property-loms.html" title="/properties/loms">/properties/loms
+                              (sessionCapture.schema.json)
+                              </a></li>
+                        <li><a href="schema-6.html" title="/properties/loms/items[0]">/properties/loms/items[0]
                               (sessionCapture.schema.json)
                               </a></li>
                      </ul>

@@ -67,16 +67,19 @@
                </div>
                <div class="col-md-10">
                   <div class="valign-center"><map name="DiagramMap" id="DiagramMap">
-                        <area shape="rect" coords="299,909,550,931" href="def-actionevent.html" alt="Drilldown into /$defs/ActionEvent"></area>
-                        <area shape="rect" coords="295,880,554,936" href="def-actionevent.html" alt="Drilldown into /$defs/ActionEvent"></area>
-                        <area shape="rect" coords="299,836,546,867" href="def-explorationevent.html" alt="Drilldown into /$defs/ExplorationEvent"></area>
-                        <area shape="rect" coords="295,807,550,872" href="def-explorationevent.html" alt="Drilldown into /$defs/ExplorationEvent"></area>
-                        <area shape="rect" coords="299,773,552,795" href="def-lom.html" alt="Drilldown into /$defs/LOM"></area>
-                        <area shape="rect" coords="295,744,556,800" href="def-lom.html" alt="Drilldown into /$defs/LOM"></area>
-                        <area shape="rect" coords="299,710,527,732" href="def-zone.html" alt="Drilldown into /$defs/Zone"></area>
-                        <area shape="rect" coords="295,681,531,737" href="def-zone.html" alt="Drilldown into /$defs/Zone"></area>
-                        <area shape="rect" coords="299,647,537,669" href="def-bounds.html" alt="Drilldown into /$defs/Bounds"></area>
-                        <area shape="rect" coords="295,618,541,674" href="def-bounds.html" alt="Drilldown into /$defs/Bounds"></area>
+                        <area shape="rect" coords="299,985,550,1007" href="def-actionevent.html" alt="Drilldown into /$defs/ActionEvent"></area>
+                        <area shape="rect" coords="295,956,554,1012" href="def-actionevent.html" alt="Drilldown into /$defs/ActionEvent"></area>
+                        <area shape="rect" coords="299,912,546,943" href="def-explorationevent.html" alt="Drilldown into /$defs/ExplorationEvent"></area>
+                        <area shape="rect" coords="295,883,550,948" href="def-explorationevent.html" alt="Drilldown into /$defs/ExplorationEvent"></area>
+                        <area shape="rect" coords="299,849,538,871" href="def-lomref.html" alt="Drilldown into /$defs/LomRef"></area>
+                        <area shape="rect" coords="295,820,542,876" href="def-lomref.html" alt="Drilldown into /$defs/LomRef"></area>
+                        <area shape="rect" coords="299,786,552,808" href="def-lom.html" alt="Drilldown into /$defs/Lom"></area>
+                        <area shape="rect" coords="295,757,556,813" href="def-lom.html" alt="Drilldown into /$defs/Lom"></area>
+                        <area shape="rect" coords="299,723,527,745" href="def-zone.html" alt="Drilldown into /$defs/Zone"></area>
+                        <area shape="rect" coords="295,694,531,750" href="def-zone.html" alt="Drilldown into /$defs/Zone"></area>
+                        <area shape="rect" coords="299,660,537,682" href="def-bounds.html" alt="Drilldown into /$defs/Bounds"></area>
+                        <area shape="rect" coords="299,647,537,660" href="def-bounds.html" alt="Drilldown into /$defs/Bounds"></area>
+                        <area shape="rect" coords="295,618,541,687" href="def-bounds.html" alt="Drilldown into /$defs/Bounds"></area>
                         <area shape="rect" coords="299,584,548,606" href="def-dimension.html" alt="Drilldown into /$defs/Dimension"></area>
                         <area shape="rect" coords="299,571,548,584" href="def-dimension.html" alt="Drilldown into /$defs/Dimension"></area>
                         <area shape="rect" coords="295,542,552,611" href="def-dimension.html" alt="Drilldown into /$defs/Dimension"></area>
@@ -239,7 +242,13 @@
                            <td>object</td>
                         </tr>
                         <tr>
-                           <td><strong tooltip="Reference using '#/definitions/LOM'"><a href="def-lom.html" title="/$defs/LOM">LOM
+                           <td><strong tooltip="Reference using '#/definitions/Lom'"><a href="def-lom.html" title="/$defs/Lom">Lom
+                                    (sessionCapture.schema.json)
+                                    </a></strong></td>
+                           <td>object</td>
+                        </tr>
+                        <tr>
+                           <td><strong tooltip="Reference using '#/definitions/LomRef'"><a href="def-lomref.html" title="/$defs/LomRef">LomRef
                                     (sessionCapture.schema.json)
                                     </a></strong></td>
                            <td>object</td>
@@ -291,7 +300,14 @@
             "type": "array",
             "description": "List of LOMs captured in this session chunk",
             "items": {
-                "$ref": "#/$defs/LOM"
+                "anyOf": [
+                    {
+                        "$ref": "#/$defs/Lom"
+                    },
+                    {
+                        "$ref": "#/$defs/LomRef"
+                    }
+                ]
             }
         },
         "ee": {
@@ -327,6 +343,7 @@
             "type": "array",
             "description": "Coordinates of an axis-aligned rectangle",
             "additionalItems": false,
+            "minItems": 4,
             "items": [
                 {
                     "type": "integer",
@@ -349,7 +366,7 @@
         "Zone": {
             "type": "object",
             "description": "Representation of a zone on screen",
-            "additionalItems": false,
+            "additionalProperties": false,
             "properties": {
                 "id": {
                     "type": "string",
@@ -362,7 +379,6 @@
                 "c": {
                     "type": "array",
                     "description": "List of children zones of this zone",
-                    "minItems": 1,
                     "items": {
                         "$ref": "#/$defs/Zone"
                     }
@@ -384,14 +400,18 @@
                 }
             },
             "required": [
-                "bounds"
+                "b"
             ]
         },
-        "LOM": {
+        "Lom": {
             "type": "object",
             "description": "Specification of the wireframe of a single Web page",
             "additionalProperties": true,
             "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique ID for this LOM in the context of current session"
+                },
                 "ts": {
                     "$ref": "#/$defs/TimeStamp",
                     "description": "Instant of this LOM capture relative to the session chunk timeStamp"
@@ -424,6 +444,25 @@
                 "r"
             ]
         },
+        "LomRef": {
+            "type": "object",
+            "description": "Reference to a LOM previously captured",
+            "additionalProperties": false,
+            "properties": {
+                "ts": {
+                    "$ref": "#/$defs/TimeStamp",
+                    "description": "Instant of this LOM capture relative to the session chunk timeStamp"
+                },
+                "ref": {
+                    "type": "string",
+                    "description": "ID of the referenced LOM"
+                }
+            },
+            "required": [
+                "ts",
+                "ref"
+            ]
+        },
         "ExplorationEvent": {
             "type": "string",
             "description": "Information about an exploration event (mouse move, scrolling, keyboard navigation, ...)"
@@ -447,7 +486,7 @@
                <div class="col-md-10">
                   <div class="valign-center">
                      <ul>
-                        <li><a href="schema-4.html" title="/additionalProperties">/additionalProperties
+                        <li><a href="schema-5.html" title="/additionalProperties">/additionalProperties
                               (sessionCapture.schema.json)
                               </a></li>
                      </ul>

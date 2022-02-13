@@ -48,10 +48,10 @@
                         <area shape="rect" coords="286,240,513,262" href="property-s.html" alt="Drilldown into /$defs/Zone/properties/s"></area>
                         <area shape="rect" coords="282,211,517,267" href="property-s.html" alt="Drilldown into /$defs/Zone/properties/s"></area>
                         <area shape="rect" coords="286,186,537,199" href="property-c.html" alt="Drilldown into /$defs/Zone/properties/c"></area>
-                        <area shape="rect" coords="286,173,537,186" href="property-c.html" alt="Drilldown into /$defs/Zone/properties/c"></area>
-                        <area shape="rect" coords="282,144,541,204" href="property-c.html" alt="Drilldown into /$defs/Zone/properties/c"></area>
-                        <area shape="rect" coords="286,110,536,132" href="def-bounds.html" alt="Drilldown into /$defs/Bounds"></area>
-                        <area shape="rect" coords="282,81,540,137" href="def-bounds.html" alt="Drilldown into /$defs/Bounds"></area></map><img src="images/def-zone.png" border="0" alt="JSON Schema Diagram of /$defs/Zone" usemap="#DiagramMap"></img></div>
+                        <area shape="rect" coords="282,157,541,204" href="property-c.html" alt="Drilldown into /$defs/Zone/properties/c"></area>
+                        <area shape="rect" coords="286,123,536,145" href="def-bounds.html" alt="Drilldown into /$defs/Bounds"></area>
+                        <area shape="rect" coords="286,110,536,123" href="def-bounds.html" alt="Drilldown into /$defs/Bounds"></area>
+                        <area shape="rect" coords="282,81,540,150" href="def-bounds.html" alt="Drilldown into /$defs/Bounds"></area></map><img src="images/def-zone.png" border="0" alt="JSON Schema Diagram of /$defs/Zone" usemap="#DiagramMap"></img></div>
                </div>
             </div>
          </div>
@@ -114,36 +114,8 @@
                                              (sessionCapture.schema.json)
                                              </a></td>
                                     </tr>
-                                    <thead>
-                                       <tr>
-                                          <th class="col-md-3" tooltip="Any property not matched by the properties described above, must comply with the rules below.">Additional Properties</th>
-                                          <th class="col-md-2" tooltip="The data types that this property can contain within the JSON instance document">Type</th>
-                                          <th class="col-md-7" tooltip="A description of the property including validation rules">Description</th>
-                                       </tr>
-                                    </thead>
-                                    <tr>
-                                       <td tooltip="The property can have any name">
-                                          Any Property
-                                          
-                                       </td>
-                                       <td tooltip="The property can have any type">
-                                          Any
-                                          
-                                       </td>
-                                       <td>
-                                          All values are valid, no restrictions.
-                                          
-                                       </td>
-                                    </tr>
                                  </table>
                               </div>
-                           </div>
-                           <div class="row">
-                              <div class="col-md-5" tooltip="A list of properties that must be present in the instance object. Note these may not always be described explicitly and may be described by pattern properties or 'Any Property' rules.">
-                                 Required Properties
-                                 
-                              </div>
-                              <div class="col-md-7"><i>bounds</i></div>
                            </div>
                         </div>
                      </div>
@@ -160,7 +132,7 @@
                   <div class="valign-center"><pre class="json">"Zone": {
     "type": "object",
     "description": "Representation of a zone on screen",
-    "additionalItems": false,
+    "additionalProperties": false,
     "properties": {
         "id": {
             "type": "string",
@@ -173,7 +145,6 @@
         "c": {
             "type": "array",
             "description": "List of children zones of this zone",
-            "minItems": 1,
             "items": {
                 "$ref": "#/$defs/Zone"
             }
@@ -195,9 +166,9 @@
         }
     },
     "required": [
-        "bounds"
+        "b"
     ]
-}</pre><div><i>https://opentech-ux.github.io/sessionCapture-format/sessionCapture.schema.json (79:10)
+}</pre><div><i>https://opentech-ux.github.io/sessionCapture-format/sessionCapture.schema.json (87:10)
                            </i></div>
                   </div>
                </div>
@@ -214,16 +185,19 @@
                         <li><a href="file-sessioncapture_schema_json.html" title="/">/
                               (sessionCapture.schema.json)
                               </a></li>
-                        <li><a href="def-lom.html" title="/$defs/LOM">/$defs/LOM
+                        <li><a href="def-lom.html" title="/$defs/Lom">/$defs/Lom
                               (sessionCapture.schema.json)
                               </a></li>
-                        <li><a href="schema-2.html" title="/$defs/Zone/additionalItems">/$defs/Zone/additionalItems
+                        <li><a href="schema-3.html" title="/$defs/Zone/additionalProperties">/$defs/Zone/additionalProperties
                               (sessionCapture.schema.json)
                               </a></li>
                         <li><a href="property-c.html" title="/$defs/Zone/properties/c">/$defs/Zone/properties/c
                               (sessionCapture.schema.json)
                               </a></li>
                         <li><a href="property-loms.html" title="/properties/loms">/properties/loms
+                              (sessionCapture.schema.json)
+                              </a></li>
+                        <li><a href="schema-6.html" title="/properties/loms/items[0]">/properties/loms/items[0]
                               (sessionCapture.schema.json)
                               </a></li>
                      </ul>
